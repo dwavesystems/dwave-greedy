@@ -1,7 +1,7 @@
 [build-system]
 requires = [
     "setuptools>=46.4.0",       # PEP-420 support, PEP-517/518 support, setup.cfg attr: support
-    "wheel>=0.30.0",            # limited python api support
+    "wheel>=0.34.0",            # limited python api support, macos binary wheels platform tag auto-detect
     "cython>=0.29.23,<3.0",
     "numpy==1.19.4",
 ]

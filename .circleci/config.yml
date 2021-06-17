@@ -185,12 +185,6 @@ jobs:
     macos:
       xcode: << parameters.xcode >>
 
-    environment:
-      # Force (lie about) macOS 10.9 binary compatibility.
-      # Needed for properly versioned wheels.
-      # See: https://github.com/MacPython/wiki/wiki/Spinning-wheels
-      MACOSX_DEPLOYMENT_TARGET: 10.9
-
     steps:
       - checkout
 
