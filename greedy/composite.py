@@ -91,7 +91,7 @@ class SteepestDescentComposite(dimod.ComposedSampler):
 
         greedy_sampler = greedy.SteepestDescentSolver()
 
-        if self._n_best:
+        if self._n_best is not None:
             initial_states = list(sampleset.samples())[:self._n_best]
         else:
             initial_states = sampleset
