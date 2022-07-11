@@ -61,3 +61,11 @@ class TestSteepestDescendComposite(unittest.TestCase):
 
         np.testing.assert_array_almost_equal(
             sampleset.record.sample, ground.record.sample)
+
+    def test_n_best(self):
+        bqm = dimod.BQM({x: x for x in range(4)}, {(2, 3): -6}, 'BINARY')
+
+        sampler = SteepestDescentComposite(dimod.ExactSolver(), n_best=1)
+        sampleset = sampler.sample(bqm).aggregate()
+
+        np.testing.assert_array_equal(sampleset.record.sample, [[0, 0, 1, 1]])

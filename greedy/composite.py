@@ -43,8 +43,9 @@ class SteepestDescentComposite(dimod.ComposedSampler):
 
     """
 
-    def __init__(self, child_sampler):
+    def __init__(self, child_sampler, n_best=None):
         self.children = [child_sampler]
+        self._n_best = n_best
 
         # set the parameters
         self.parameters = child_sampler.parameters.copy()
@@ -90,4 +91,9 @@ class SteepestDescentComposite(dimod.ComposedSampler):
 
         greedy_sampler = greedy.SteepestDescentSolver()
 
-        return greedy_sampler.sample(bqm, initial_states=sampleset)
+        if self._n_best:
+            initial_states = list(sampleset.samples())[:self._n_best]
+        else:
+            initial_states = sampleset
+
+        return greedy_sampler.sample(bqm, initial_states=initial_states)
