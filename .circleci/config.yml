@@ -101,6 +101,7 @@ workflows:
           requires:
             - ocean/build-sdist
             - ocean/build-manylinux-wheel
+            - ocean/cibw-build-linux-aarch64-wheel
           post-steps:
             - run: make -C tests/
           matrix:
