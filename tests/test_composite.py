@@ -37,7 +37,8 @@ class TestSteepestDescendComposite(unittest.TestCase):
         J = {(0, 4): 1.5}
         num_reads = 100
 
-        response = sampler.sample_ising(h, J, num_reads=num_reads)
+        # make sure samples are not aggregated with answer_mode='raw'
+        response = sampler.sample_ising(h, J, num_reads=num_reads, answer_mode='raw')
 
         self.assertEqual(len(response), num_reads)
 
