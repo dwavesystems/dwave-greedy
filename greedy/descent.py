@@ -12,19 +12,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from libcpp cimport bool
-from libcpp.vector cimport vector
-
-cdef extern from "descent.h":
-
-    unsigned int steepest_gradient_descent(
-        char* states,
-        double* energies,
-        unsigned* num_steps,
-        const int num_samples,
-        const vector[double]& linear_biases,
-        const vector[int]& coupler_starts,
-        const vector[int]& coupler_ends,
-        const vector[double]& coupler_weights,
-        bool large_sparse_opt
-    ) nogil
+from dwave.samplers.greedy.descent import steepest_gradient_descent

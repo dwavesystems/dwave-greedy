@@ -1,3 +1,5 @@
+> :warning: **Note**: *dwave-greedy* is deprecated in favor of `dwave-samplers <https://github.com/dwavesystems/dwave-samplers>`_.
+
 .. image:: https://circleci.com/gh/dwavesystems/dwave-greedy.svg?style=svg
     :target: https://circleci.com/gh/dwavesystems/dwave-greedy
     :alt: Linux/MacOS/Windows build status
@@ -57,24 +59,6 @@ Install from a package on PyPI:
 .. code-block:: bash
 
     pip install dwave-greedy
-
-or install from source:
-
-.. code-block:: bash
-
-    pip install git+https://github.com/dwavesystems/dwave-greedy.git#egg=dwave-greeedy
-
-Note: installation from source involves a "cythonization" step. To install
-project requirements automatically, make sure to use a PEP-517 compliant pip,
-e.g. ``pip>=10.0``.
-
-To build from source:
-
-.. code-block:: bash
-
-    pip install -r requirements.txt
-    python setup.py build_ext --inplace
-    python setup.py install
 
 .. installation-end-marker
 
