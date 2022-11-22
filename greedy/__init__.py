@@ -13,7 +13,7 @@
 # limitations under the License.
 
 __package_name__ = 'dwave-greedy'
-__version__ = '0.2.5'
+__version__ = '0.3.0.dev0'
 
 from greedy.sampler import *
 import greedy.sampler
